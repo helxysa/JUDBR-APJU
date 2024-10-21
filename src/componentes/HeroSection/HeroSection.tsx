@@ -1,7 +1,7 @@
 'use client'
 
+import Link from "next/link";
 import Button from "../Button/Button";
-import { Animation } from "../useIntersectionAnimation/Animation";
 
 export default function HeroSection() {
 
@@ -22,10 +22,10 @@ export default function HeroSection() {
               Permita que seus clientes acompanhem o status dos seus processos diretamente do sistema do seu escritório.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-              <Button href="#" text="Quero lançar meu sistema" className=" px-8 py-3" />
-              <button className="bg-white text-judbr-main px-6 py-3 rounded-full border border-judbr-main hover:bg-gray-100 transition duration-300 text-sm sm:text-base w-full sm:w-auto">
+              <Button href="/pages/Formulario" text="Quero lançar meu sistema" className=" px-8 py-3" />
+              <Link href="/#precos" className="bg-white text-judbr-main px-6 py-3 rounded-full border border-judbr-main hover:bg-gray-100 transition duration-300 text-sm sm:text-base w-full sm:w-auto">
                 Ver planos e preços
-              </button>
+              </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600">
               <div className="flex items-center justify-center lg:justify-start">

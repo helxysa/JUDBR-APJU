@@ -24,7 +24,7 @@ const itemRef = Animation<HTMLDivElement>();
                 Desenvolvemos os recursos essenciais para atender os seus
                 clientes e melhorar o seu serviço.
               </p>
-              <Button href="#" text="Experimente Gratis" className=" px-8 py-3" />
+              <Button href="/pages/Formulario" text="Experimente Gratis" className=" px-8 py-3" />
             </div>
 
             {/* Right side: Features */}

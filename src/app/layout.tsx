@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/componentes/Nav/Nav";
 import localFont from 'next/font/local';
-
+import Footer from '@/componentes/Footer/Footer';
+import PageUp from '@/componentes/PageUp/PageUp';
 
 const metropolis = localFont({
   src: [
@@ -46,9 +47,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${metropolis.variable}`}>
-      <body className="bg-[#F4F7FE]">
+      <body className="bg-white">
         <Nav />
         {children}
+        <Footer />
+        <PageUp />
       </body>
     </html>
   );

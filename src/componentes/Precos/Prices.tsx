@@ -1,8 +1,11 @@
+'use client'
 import  Button  from "../Button/Button";
+import { Animation } from "../useIntersectionAnimation/Animation";
 
 export default function Prices() {
+  
     return (
-      <div className="bg-white min-h-screen">
+      <div  className='' id="precos">
         <main className="container mx-auto px-20 py-10 pt-20 pb-16">
           <div className="text-center">
             <span className="text-judbr-main text-sm font-semibold border border-gray-200 rounded-full px-4 py-2">Nossos planos</span>
@@ -24,15 +27,17 @@ export default function Prices() {
   }
 
   export function PricesWithCustom() {
+    const itemRef = Animation<HTMLDivElement>();
+
     return (
-      <div className="bg-white min-h-screen">
+      <div ref={itemRef} className='opacity-0' >
         <main className="container mx-auto px-4 sm:px-6 lg:px-20 py-10 pt-20 pb-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12">
             {/* Iniciante Plan */}
             <PriceCard
-              title="Iniciante"
+              title="Advogado"
               price="160"
-              description="Para advogados que estão iniciando a sua jornada digital."
+              description="Para quem trabalha por conta própria"
               features={[
                 "Até 300 processos",
                 "Aplicativo na Apple Store e Google Play",
@@ -43,9 +48,9 @@ export default function Prices() {
             
             {/* Basic Plan */}
             <PriceCard
-              title="Basic"
+              title="Escritório"
               price="300"
-              description="Para profissionais que já possuem uma base maior de clientes."
+              description="Para escritórios de pequeno e médio porte"
               features={[
                 "Até 1000 processos",
                 "Aplicativo na Apple Store e Google Play",
@@ -57,9 +62,9 @@ export default function Prices() {
             
             {/* Plus Plan */}
             <PriceCard
-              title="Plus"
+              title="Banca"
               price="590"
-              description="Para escritórios e profissionais com grande base de clientes."
+              description="Para grandes escritórios com múltiplas unidades."
               features={[
                 "Até 2000 processos",
                 "Aplicativo na Apple Store e Google Play",
@@ -85,48 +90,50 @@ export default function Prices() {
       </div>
     )
   }
-  function PriceCard({ title, price, description, features, highlighted = false }: { title: string, price: string, description: string, features: string[], highlighted?: boolean }) {
+ 
+  function PriceCard({ title, price, description, features, highlighted = false }: { 
+    readonly title: string, 
+    readonly price: string, 
+    readonly description: string, 
+    readonly features: readonly string[], 
+    readonly highlighted?: boolean 
+  }) {
     return (
-      <div className={`bg-white rounded-lg shadow-lg p-4 sm:p-6 flex flex-col h-full ${highlighted ? 'border-2 border-judbr-main' : ''}`}>
-        <div className="flex flex-col h-full">
-          <h3 className="text-xl sm:text-2xl font-bold mb-2 text-judbr-gray-dark">{title}</h3>
-          <p className="text-judbr-gray-dark mb-3 text-sm sm:text-base flex-grow">{description}</p>
-          <p className="text-3xl sm:text-4xl font-semibold text-[#252525] mb-4">
-            {price && (
-              <>
-                <span className="text-xl sm:text-2xl align-top">R$</span>
-                {price}
-              </>
-            )}
-          </p>
-          <div className="mb-6 flex justify-center">
-            <Button
-              href="#"
-              text="Contratar"
-              className="px-4 sm:px-9 border border-judbr-main"
-              textColor={
-                highlighted 
-                  ? { default: '', hover: '' }
-                  : { default: 'text-black', hover: '' }
-              }
-              bgColors={
-                highlighted 
-                  ? { default: '', hover: '' }
-                  : { default: 'bg-white', hover: '' }
-              }
-            />
+      <div className={`bg-white rounded-lg shadow-md p-6 flex flex-col justify-between ${highlighted ? 'border-2 border-purple-200' : ''}`}>
+        <div>
+          <h3 className="text-lg font-semibold mb-2 text-judbr-gray-dark">{title}</h3>
+          <p className="text-sm text-judbr-gray-light mb-4">{description}</p>
+          <div className="mb-6">
+            <span className="text-2xl font-bold text-judbr-gray-dark align-top">R$</span>
+            <span className="text-5xl font-bold text-judbr-gray-dark">{price}</span>
+            <span className="text-judbr-gray-light">/mês</span>
           </div>
-          <ul className="space-y-2">
-            {features.map((feature, index) => (
-              <li key={index} className="flex items-start text-sm sm:text-base text-judbr-gray-dark">
-                <svg className="w-4 h-4 mr-2 text-judbr-gray-dark flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
         </div>
+        <Button
+          href="#"
+          text="Contratar"
+          className="w-full py-2 px-4 transition duration-300"
+          bgColors={
+            highlighted
+              ? { default: 'bg-judbr-main', hover: 'hover:bg-judbr-gray-dark' }
+              : { default: 'bg-[#F4F7FE]', hover: 'hover:bg-judbr-gray-dark' }
+          }
+          textColor={
+            highlighted
+              ? { default: 'text-white', hover: 'hover:text-white' }
+              : { default: 'text-judbr-gray-dark', hover: 'hover:text-white' }
+          }
+        />
+        <ul className="mt-6 space-y-2">
+          {features.map((feature, index) => (
+            <li key={`${title}-${feature}-${index}`} className="flex items-center text-sm text-judbr-gray-dark">
+              <svg className="w-4 h-4 mr-2 text-judbr-gray-light" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+              </svg>
+              {feature}
+            </li>
+          ))}
+        </ul>
       </div>
     )
   }
