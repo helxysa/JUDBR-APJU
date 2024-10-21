@@ -1,6 +1,12 @@
+'use client'
+
+import Button from "../Button/Button";
+import { Animation } from "../useIntersectionAnimation/Animation";
+
 export default function HeroSection() {
+
   return (
-        <div className="bg-[#f8f9ff] min-h-screen">
+        <div className="bg-[#f8f9ff] min-h-screen ">
       <main className="container mx-auto px-4 sm:px-6 lg:px-20 py-10 pt-20 lg:pt-40 pb-16 lg:pb-0">
         <div className="flex flex-col lg:flex-row items-center justify-around">
     
@@ -16,9 +22,7 @@ export default function HeroSection() {
               Permita que seus clientes acompanhem o status dos seus processos diretamente do sistema do seu escritório.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-              <button className="bg-judbr-main text-white px-6 py-3 rounded-full hover:bg-judbr-dark transition duration-300 text-sm sm:text-base w-full sm:w-auto">
-                Quero lançar meu sistema
-              </button>
+              <Button href="#" text="Quero lançar meu sistema" className=" px-8 py-3" />
               <button className="bg-white text-judbr-main px-6 py-3 rounded-full border border-judbr-main hover:bg-gray-100 transition duration-300 text-sm sm:text-base w-full sm:w-auto">
                 Ver planos e preços
               </button>
@@ -59,21 +63,22 @@ export default function HeroSection() {
                   loop 
                   muted 
                   playsInline
-                  className="w-full h-auto md:max-w-[150%] lg:max-w-[160%] xl:1380:max-w-[100%] mx-auto rounded-lg animate-fade-in-up"
+                  className="w-full h-auto md:max-w-[150%] lg:max-w-[160%] xl:1380:max-w-[100%] mx-auto rounded-lg animate-fade-in-up-2"
                 > </video>
-            <div className="absolute top-1/4 -left-4 bg-white p-3 rounded-lg shadow-md hidden sm:flex items-center space-x-2 animate-fade-in-up" style={{ animationDelay: '0.10s' }}>
+           <div className="absolute top-1/4 -left-20 bg-white p-3 rounded-lg shadow-md hidden md:flex lg:flex items-center space-x-2 animate-fade-in-up-2 opacity-0 " style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-judbr-main" viewBox="0 0 20 20" fill="currentColor">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
             <span className="text-sm text-judbr-gray-dark font-semibold">Consultas de Processos</span>
           </div>
-          <div className="absolute top-1/2 -right-4 bg-white p-3 rounded-lg shadow-md hidden sm:flex items-center space-x-2 animate-fade-in-up" style={{ animationDelay: '0.20s' }}>
+          <div className="absolute top-1/2 -right-20 bg-white p-3 rounded-lg shadow-md hidden sm:flex items-center hidden md:flex lg:flex space-x-2 animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-judbr-main" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
             </svg>
             <span className="text-sm text-judbr-gray-dark font-semibold">Atualização de processos</span>
           </div>
-          <div className="absolute bottom-1/4 -left-4 bg-white p-3 rounded-lg shadow-md hidden sm:flex items-center space-x-2 animate-fade-in-up" style={{ animationDelay: '0.30s' }}>
+          <div className="absolute bottom-1/4 -left-20 bg-white p-3 rounded-lg shadow-md hidden md:flex lg:flex items-center space-x-2 animate-fade-in-up opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-judbr-main" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
             </svg>

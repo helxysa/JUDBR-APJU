@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Button from "../Button/Button";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -62,15 +63,15 @@ export default function Nav() {
 
           {/* Desktop CTA and Login */}
 
-          <div className="relative overflow-hidden group  ">
-        <Link
-            href="#"
-            className="inline-block bg-judbr-main text-gray-100 px-8 py-3 rounded-full group-hover:bg-gray-600 transition-all duration-300"
-        >
-            <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full opacity-100 group-hover:opacity-0">
+          <div className="relative inline-block overflow-hidden group">
+            <Link
+              href="#"
+              className="inline-flex items-center justify-center bg-judbr-main text-gray-100 px-4 py-2 rounded-full transition-all duration-500 ease-in-out hover:bg-gray-600"
+            >
+              <span className="relative inline-block transition-all duration-500 ease-in-out group-hover:transform group-hover:-translate-y-full group-hover:opacity-0">
                 Experimente Grátis
               </span>
-              <span className="absolute top-full left-0 w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-full">
+              <span className="absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0">
                 Experimente Grátis
               </span>
             </Link>

@@ -17,15 +17,19 @@ const config: Config = {
     extend: {
       animation: {
         'fade-in-up': 'fade-in-up 1s ease-out',
-        'fade-in-up-2': 'fade-in-up 1.2s ease-out',
+        'fade-in-up-2': 'fade-in-up 1s ease-out',
       },
+      
       keyframes: {
         'fade-in-up-2':{
           '0%': {
             opacity: '0',
+            transform: 'translateY(100%)'
           },
           '100%': {
             opacity: '1',
+            transform: 'translateY(0)'
+
           },
         },
         'fade-in-up': {
