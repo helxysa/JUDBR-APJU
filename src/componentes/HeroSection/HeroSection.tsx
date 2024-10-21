@@ -1,52 +1,67 @@
 'use client'
 
+import { useState, useEffect } from 'react';
 import Link from "next/link";
 import Button from "../Button/Button";
 
 export default function HeroSection() {
+  const [text, setText] = useState('');
+  const fullText = 'gerencie o sistema do seu escritório';
+  const typingSpeed = 50; 
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   return (
-        <div className="bg-[#f8f9ff] min-h-screen ">
-      <main className="container mx-auto px-4 sm:px-6 lg:px-20 py-10 pt-20 lg:pt-40 pb-16 lg:pb-0">
+    <div className="bg-[#f8f9ff] min-h-screen 4xl:-mb-[500px] 3xl:-mb-[130px]  ">
+      <main className="container mx-auto px-10 sm:px-6 md:px-6 4xl:px-[180px] 3xl:px-[120px] py-10 pt-20 lg:py-[170px] pb-16 lg:pb-0">
         <div className="flex flex-col lg:flex-row items-center justify-around">
-    
           {/* Left side: Text content */}
-          <div className="w-full lg:w-5/12  lg:">
+          <div className="w-full lg:w-5/12 lg:">
             <h1 className="font-semibold mb-4 text-center lg:text-left">
-              <span className="text-judbr-main text-3xl sm:text-4xl lg:text-5xl">Advogado,</span>
-              <span className="text-judbr-gray-dark text-4xl sm:text-5xl lg:text-6xl block mt-2">
-                gerencie o sistema do seu escritório
+              <span className="text-judbr-main text-4xl sm:text-3xl lg:text-5xl">Advogado,</span>
+              <span className="text-judbr-gray-dark text-3xl sm:text-5xl lg:text-4xl block mt-2 mr-10">
+                {text}
+                <span className="inline-block w-3 h-3 bg-purple-600 rounded-full ml-1 animate-blink"></span>
               </span>
             </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-judbr-gray-dark mb-6 text-center lg:text-left">
-              Permita que seus clientes acompanhem o status dos seus processos diretamente do sistema do seu escritório.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-              <Button href="/pages/Formulario" text="Quero lançar meu sistema" className=" px-8 py-3" />
-              <Link href="/#precos" className="bg-white text-judbr-main px-6 py-3 rounded-full border border-judbr-main hover:bg-gray-100 transition duration-300 text-sm sm:text-base w-full sm:w-auto">
+              <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Quero lançar meu sistema" className="px-8 py-3 w-full sm:w-auto" />
+              <Link href="/#precos" className="bg-white text-judbr-main px-6 py-3 rounded-full border border-judbr-main hover:bg-gray-100 transition duration-300 text-sm sm:text-base w-full sm:w-auto text-center">
                 Ver planos e preços
               </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600">
-              <div className="flex items-center justify-center lg:justify-start">
+            <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+              <div className="flex flex-row items-center justify-start">
                 <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span>Sistema Web e Mobile</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start">
+              <div className="flex flex-row items-center justify-start">
                 <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span>Com sua marca</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start">
+              <div className="flex flex-row items-center justify-start">
                 <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span>Acompanhamento de processo</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start">
+              <div className="flex flex-row items-center justify-start">
                 <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>

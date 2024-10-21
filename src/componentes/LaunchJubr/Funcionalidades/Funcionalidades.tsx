@@ -8,7 +8,7 @@ export default function Funcionalidades() {
 const itemRef = Animation<HTMLDivElement>();
 
   return (
-    <div ref={itemRef} className="bg-white min-h-screen pt-10 opacity-0  border-b border-gray-200">
+    <div ref={itemRef} className="bg-white min-h-screen pt-10 opacity-0  border-b border-gray-200 ">
       <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-10">
         <div className="bg-[#f8f9ff] rounded-1xl p-6 lg:p-[70px] rounded-xl ">
           <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -24,7 +24,7 @@ const itemRef = Animation<HTMLDivElement>();
                 Desenvolvemos os recursos essenciais para atender os seus
                 clientes e melhorar o seu serviço.
               </p>
-              <Button href="/pages/Formulario" text="Experimente Gratis" className=" px-8 py-3" />
+              <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Experimente Gratis" className=" px-8 py-3" />
             </div>
 
             {/* Right side: Features */}

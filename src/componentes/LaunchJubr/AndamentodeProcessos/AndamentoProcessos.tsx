@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from "react";
 import { Animation } from "../../useIntersectionAnimation/Animation";
 
 export default function Funcionalidades() {
@@ -8,7 +7,7 @@ export default function Funcionalidades() {
 
   return (
     <div ref={itemRef} className="bg-white min-h-screen pt-5 md:pt-10 opacity-0">
-      <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-5 md:pt-10">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-5 md:pt-10 4xl:-pb-[500px] 3xl:-pb-[130px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {/* Andamento de processos */}
           <div className="bg-[#f8f9ff] rounded-xl p-4 sm:p-6">
@@ -23,14 +22,22 @@ export default function Funcionalidades() {
             </p>
             <div className="space-y-3 sm:space-y-4">
               <ProcessItem
-                avatar="/path-to-avatar1.jpg"
+                avatar={
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 sm:w-10 sm:h-10 text-judbr-main">
+                    <path fillRule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clipRule="evenodd" />
+                  </svg>
+                }
                 title="Movimentação do tribunal"
                 description="Anexo Juntado: Acórdão | Intimação. Ver documento"
                 date="Hoje"
                 isNew={true}
               />
               <ProcessItem
-                avatar="/path-to-avatar2.jpg"
+                avatar={
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 sm:w-10 sm:h-10 text-judbr-main">
+                    <path fillRule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clipRule="evenodd" />
+                  </svg>
+                }
                 title="Movimentação do tribunal"
                 description="Audiência de instrução realizada (02/02/2023 15:30)"
                 date="19 Nov"
@@ -63,12 +70,12 @@ export default function Funcionalidades() {
   );
 }
 
-function ProcessItem({ avatar, title, description, date, isNew = false }: { avatar: string; title: string; description: string; date: string; isNew?: boolean }) {
-    const itemRef = Animation<HTMLDivElement>();
+function ProcessItem({ avatar, title, description, date, isNew = false }: Readonly<{ avatar: React.ReactNode; title: string; description: string; date: string; isNew?: boolean }>) {
+  const itemRef = Animation<HTMLDivElement>();
 
   return (
     <div ref={itemRef} className="flex items-start space-x-2 md:space-x-3 sm:space-x-4 opacity-0">
-      <img src={avatar} alt="" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
+      <div className="w-8 h-8 sm:w-10 sm:h-10">{avatar}</div>
       <div className="flex-1">
         <div className="flex items-center flex-wrap">
           <h4 className="font-medium text-gray-800 text-sm sm:text-base">{title}</h4>
@@ -85,8 +92,8 @@ function ProcessItem({ avatar, title, description, date, isNew = false }: { avat
   );
 }
 
-function AIItem({ name, conversations }: { name: string; conversations: number }) {
-    const itemRef = Animation<HTMLDivElement>();
+function AIItem({ name, conversations }: Readonly<{ name: string; conversations: number }>) {
+  const itemRef = Animation<HTMLDivElement>();
 
   return (
     <div ref={itemRef} className="flex items-center justify-between bg-white rounded-lg p-2 sm:p-3 opacity-0">

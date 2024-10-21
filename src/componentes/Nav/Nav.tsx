@@ -26,7 +26,7 @@ export default function Nav() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
-          <Link
+            <Link
               href="/#precos"
               className="text-judbr-main hover:text-gray-200"
             >
@@ -41,10 +41,11 @@ export default function Nav() {
               </Link>
             </div>
             <Link
-              href="/recursos"
+              href="https://app.judbr.com.br/auth/login/"
+              target="_blank"
               className="text-judbr-main hover:text-gray-200"
             >
-              Recursos
+              Já possui uma conta?
             </Link>
             <Link
               href="/sobre-nos"
@@ -53,18 +54,18 @@ export default function Nav() {
               Quem somos
             </Link>
             <Link
-              href="/contato"
+              href="/pages/Formulario"
               className="text-judbr-main hover:text-gray-200"
             >
               Contato
             </Link>
           </div>
 
-          {/* Desktop CTA and Login */}
-
-          <div className="relative inline-block overflow-hidden group">
+          {/* Desktop CTA */}
+          <div className="hidden md:block relative inline-block overflow-hidden group">
             <Link
-              href="/pages/Formulario"
+              href="https://app.judbr.com.br/auth/register/"
+              target="_blank"
               className="inline-flex items-center justify-center bg-judbr-main text-gray-100 px-4 py-2 rounded-full transition-all duration-500 ease-in-out hover:bg-gray-600"
             >
               <span className="relative inline-block transition-all duration-500 ease-in-out group-hover:transform group-hover:-translate-y-full group-hover:opacity-0">
@@ -157,7 +158,7 @@ export default function Nav() {
                   className="block text-white hover:text-gray-200 py-2 border-b border-white"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Recursos
+                  Já possui uma conta?
                 </Link>
                 <Link
                   href="/sobre-nos"
@@ -176,20 +177,14 @@ export default function Nav() {
               </div>
             </div>
             <div className="mt-auto p-4 space-y-4">
+              
               <Link
-                href="/pages/Formulario"
-                className="block bg-secondary text-judbr-main px-4 py-2 rounded-full text-center hover:bg-secondary-dark transition duration-300"
+                href="https://app.judbr.com.br/auth/register/"
+                target="_blank"
+                className="block bg-white text-judbr-gray-dark rounded-full px-4 py-2 hover:bg-gray-200 text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Experimente Grátis
-              </Link>
-              <Link
-                href="https://app.judbr.com.br/auth/login/"
-                target="_blank"
-                className="block text-white hover:text-gray-200 text-center"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Login
               </Link>
             </div>
           </div>
