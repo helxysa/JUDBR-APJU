@@ -4,8 +4,8 @@ import { Animation } from "../useIntersectionAnimation/Animation";
 
 export default function Prices() {
     return (
-      <div className="bg-white min-h-screen">
-        <main className="container mx-auto px-4 sm:px-20 py-6 sm:py-10 pt-10 sm:pt-20 pb-8 sm:pb-16  ">
+      <div className="bg-white min-h-screen   max-w-screen-2xl mx-auto  4xl:max-w-screen-3xl">
+        <main className="container mx-auto px-4 sm:px-20 py-6 sm:py-10 pt-10 sm:pt-20 pb-8 sm:pb-16 3xl:mb-[20px]  ">
           <div className="text-center">
             <span className="text-judbr-main text-xs sm:text-sm font-semibold border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-2">
               Nossos Planos
@@ -30,7 +30,7 @@ export default function Prices() {
 
     return (
       <div ref={itemRef} className='opacity-0 ' >
-        <main className="container mx-auto px-4 sm:px-6 lg:px-20 py-10 pt-20 pb-16">
+        <main className="container mx-auto px-4 sm:px-6 lg:px-20 py-10 pt-20 pb-16 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12">
             {/* Iniciante Plan */}
             <PriceCard

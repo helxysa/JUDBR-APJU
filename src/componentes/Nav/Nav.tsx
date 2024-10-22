@@ -13,8 +13,8 @@ export default function Nav() {
 
   return (
     <header className="bg-white text-xm">
-      <nav className="bg-white fixed top-0 w-full z-50 border-b border-gray-100">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-around">
+    <nav className="bg-white fixed top-0 w-full z-50 border-b border-gray-100">
+      <div className="container-responsive py-3 flex items-center justify-around">
           <Link href="/" className="text-judbr-main font-bold text-xl">
             <img
               src="/images/judbr2.png.png"

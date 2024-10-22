@@ -14,6 +14,20 @@
   }
 }
 
+
+/*Container Responsivo da NAVBAR*/
+@layer components {
+  .container-responsive {
+    @apply container mx-auto px-4 py-3 flex items-center justify-around;
+    @apply md:px-[0px];
+    @apply lg:px-[30px];
+    @apply xl:px-[0px];
+    @apply 2xl:px-[160px];
+    @apply 3xl:px-[230px];
+    @apply 4xl:px-[90px];
+  }
+}
+
 html {
   scroll-behavior: smooth;
   scroll-timeline: --page-scroll block;

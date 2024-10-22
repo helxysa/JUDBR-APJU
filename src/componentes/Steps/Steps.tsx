@@ -46,7 +46,7 @@ export default function Steps() {
   const itemRef = Animation<HTMLDivElement>();
 
   return (
-    <div className="bg-white min-h-screen  4xl:-mb-[700px]  border-b border-gray-200 ">
+    <div className="bg-white max-h-screen  max-w-screen-2xl  mx-auto  4xl:max-w-screen-3xl p-10 border-b border-gray-300 border-t border-gray-300">
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 lg:py-12 xl:py-16 3xl:-pb-[230px]">
         <div ref={itemRef} className="text-center opacity-0 max-w-4xl mx-auto">
           <span className="text-judbr-main text-xs md:text-sm font-semibold border border-gray-200 rounded-full px-3 py-1 md:px-4 md:py-2">

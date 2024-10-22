@@ -24,8 +24,8 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="bg-[#f8f9ff] min-h-screen 4xl:-mb-[500px] 3xl:-mb-[130px]  ">
-      <main className="container mx-auto px-10 sm:px-6 md:px-6 4xl:px-[180px] 3xl:px-[120px] py-10 pt-20 lg:py-[170px] pb-16 lg:pb-0">
+    <div className="bg-[#f8f9ff] max-h-screen 2xl:px-40 md:pb-40 pb-[40px]  sm:pb-20 ">
+      <main className="container mx-auto px-10 sm:px-6 md:px-6 4xl:px-[180px] 3xl:px-[120px] py-10 pt-20 lg:py-[170px] pb-16 lg:pb-0 ">
         <div className="flex flex-col lg:flex-row items-center justify-around">
           {/* Left side: Text content */}
           <div className="w-full lg:w-5/12 lg:">
@@ -78,7 +78,7 @@ export default function HeroSection() {
                   loop 
                   muted 
                   playsInline
-                  className="w-full h-auto md:max-w-[150%] lg:max-w-[160%] xl:1380:max-w-[100%] mx-auto rounded-lg animate-fade-in-up-2"
+                  className="w-full h-auto sm:max-w-[70%] md:max-w-[30%] lg:max-w-[160%] xl:1380:max-w-[100%] mx-auto rounded-lg animate-fade-in-up-2"
                 > </video>
            <div className="absolute top-1/4 -left-20 bg-white p-3 rounded-lg shadow-md hidden md:flex lg:flex items-center space-x-2 animate-fade-in-up-2 opacity-0 " style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
 
