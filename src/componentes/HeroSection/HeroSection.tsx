@@ -24,7 +24,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="bg-[#f8f9ff] max-h-screen 2xl:px-40 md:pb-40 pb-[40px]  sm:pb-20 ">
+    <div className="bg-judbr-bg-dark max-h-screen 2xl:px-40 md:pb-40 pb-[40px]  sm:pb-20 ">
       <main className="container mx-auto px-10 sm:px-6 md:px-6 4xl:px-[180px] 3xl:px-[120px] py-10 pt-20 lg:py-[170px] pb-16 lg:pb-0 ">
         <div className="flex flex-col lg:flex-row items-center justify-around">
           {/* Left side: Text content */}
@@ -37,9 +37,9 @@ export default function HeroSection() {
               </span>
             </h1>
             <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-              <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Quero lançar meu sistema" className="px-8 py-3 w-full sm:w-auto" />
+              <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Experimente Grátis" className="px-3 py-3 w-full sm:w-auto" />
               <Link href="/#precos" className="bg-white text-judbr-main px-6 py-3 rounded-full border border-judbr-main hover:bg-gray-100 transition duration-300 text-sm sm:text-base w-full sm:w-auto text-center">
-                Ver planos e preços
+               Acompanhamento de processos
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
@@ -47,26 +47,22 @@ export default function HeroSection() {
                 <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>Sistema Web e Mobile</span>
+                <span>Acessos aos arquivos</span>
               </div>
               <div className="flex flex-row items-center justify-start">
                 <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>Com sua marca</span>
+                <span>Agenda de compromissos</span>
               </div>
               <div className="flex flex-row items-center justify-start">
                 <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>Acompanhamento de processo</span>
+                <span>Gestão de prazos
+                </span>
               </div>
-              <div className="flex flex-row items-center justify-start">
-                <svg className="w-5 h-5 text-judbr-main inline-block mr-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>Integrado ao ChatGPT</span>
-              </div>
+              
             </div>
           </div>
           

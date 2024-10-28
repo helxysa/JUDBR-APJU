@@ -16,7 +16,7 @@ export default function Nav() {
     <nav className="bg-white fixed top-0 w-full z-50 border-b border-gray-100">
       <div className="container-responsive py-3 flex items-center justify-around">
           <Link href="/" className="text-judbr-main font-bold text-xl">
-            <img
+            <Image
               src="/images/judbr2.png.png"
               alt="Logo"
               width={130}
@@ -27,10 +27,10 @@ export default function Nav() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             <Link
-              href="/#precos"
+              href="/"
               className="text-judbr-main hover:text-gray-200"
             >
-              Preços
+              Inicio
             </Link>
             <div className="relative group">
               <Link
@@ -39,41 +39,66 @@ export default function Nav() {
               >
                 Soluções
               </Link>
+              <div className="absolute left-0 mt-1 w-56 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
+                <div className="py-2">
+                  <Link
+                    href="/solucoes/advogado"
+                    className="block px-6 py-3 text-judbr-main hover:bg-gray-50 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    Advogado
+                  </Link>
+                  <Link
+                    href="/solucoes/escritorio"
+                    className="block px-6 py-3 text-judbr-main hover:bg-gray-50 transition-colors duration-150"
+                  >
+                    Escritório
+                  </Link>
+                  <Link
+                    href="/solucoes/banca"
+                    className="block px-6 py-3 text-judbr-main hover:bg-gray-50 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    Banca
+                  </Link>
+                </div>
+              </div>
             </div>
+           
             <Link
-              href="https://app.judbr.com.br/auth/login/"
-              target="_blank"
+              href="/#precos"
               className="text-judbr-main hover:text-gray-200"
             >
-              Já possui uma conta?
+              Planos e Preços
             </Link>
             <Link
-              href="/sobre-nos"
+              href="/pages/QuemSomos"
               className="text-judbr-main hover:text-gray-200"
             >
-              Quem somos
+              Quem Somos
             </Link>
-            <Link
-              href="/pages/Formulario"
-              className="text-judbr-main hover:text-gray-200"
-            >
-              Contato
-            </Link>
+          
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block relative inline-block overflow-hidden group">
+          
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="relative inline-block overflow-hidden group">
+              <Link
+                href="https://app.judbr.com.br/auth/register/"
+                target="_blank"
+                className="inline-flex items-center justify-center bg-judbr-main text-gray-100 px-4 py-2 rounded-full transition-all duration-500 ease-in-out hover:bg-gray-800"
+              >
+                <span className="relative inline-block transition-all duration-500 ease-in-out group-hover:transform group-hover:-translate-y-full group-hover:opacity-0">
+                  Experimente Grátis
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0">
+                  Experimente Grátis
+                </span>
+              </Link>
+            </div>
             <Link
-              href="https://app.judbr.com.br/auth/register/"
-              target="_blank"
-              className="inline-flex items-center justify-center bg-judbr-main text-gray-100 px-4 py-2 rounded-full transition-all duration-500 ease-in-out hover:bg-gray-600"
+              href="https://app.judbr.com.br/auth/login/" target="_blank"
+              className="text-judbr-main hover:text-gray-200"
             >
-              <span className="relative inline-block transition-all duration-500 ease-in-out group-hover:transform group-hover:-translate-y-full group-hover:opacity-0">
-                Experimente Grátis
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0">
-                Experimente Grátis
-              </span>
+              Entrar
             </Link>
           </div>
 

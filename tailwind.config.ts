@@ -58,6 +58,8 @@ const config: Config = {
         },
       },
       colors: {
+        'judbr-bg-light':'#F4F7FE',
+        'judbr-bg-dark':'#E1EAFC ',
         'judbr-gray-light': '#7c878e',
         'judbr-gray-dark': '#181b1f',
         'judbr-blue': '#0070f3',

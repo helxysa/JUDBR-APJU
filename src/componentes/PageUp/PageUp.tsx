@@ -42,7 +42,7 @@ export default function PageUp() {
               <circle
                 className="text-gray-300"
                 strokeWidth="2"
-                stroke="currentColor"
+                stroke=""
                 fill="transparent"
                 r="30"
                 cx="32"
@@ -64,7 +64,7 @@ export default function PageUp() {
             {/* Botão "Voltar ao topo" */}
             <button 
               onClick={scrollToTop} 
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 text-judbr-main -translate-y-1/2 bg-white p-4 rounded-full shadow-lg hover:bg-gray-100 transition-colors duration-300"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-judbr-main text-white p-4 rounded-full shadow-lg hover:bg-judbr-main/80 transition-colors duration-300"
               aria-label="Voltar ao topo"
             >
               <svg 

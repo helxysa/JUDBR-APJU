@@ -10,7 +10,7 @@ export default function HomePage() {
             <HeroSection />
             <LaunchJubr />
             <Steps />
-            <Prices />
+        <Prices />
             <Section />
         </div>
     )

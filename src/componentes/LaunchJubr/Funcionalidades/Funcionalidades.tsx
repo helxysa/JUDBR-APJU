@@ -10,7 +10,7 @@ const itemRef = Animation<HTMLDivElement>();
   return (
     <div ref={itemRef} className="bg-white min-h-screen pt-10 opacity-0  border-b border-gray-200 ">
       <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-10">
-        <div className="bg-[#f8f9ff] rounded-1xl p-6 lg:p-[70px] rounded-xl ">
+        <div className="bg-[#F4F7FE] rounded-1xl p-6 lg:p-[70px] rounded-xl ">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             {/* Left side content */}
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left">

@@ -47,8 +47,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${metropolis.variable}`}>
-      <body className="bg-white">
-        <Nav />
+        <body className="bg-white">
+          <Nav />
         {children}
         <Footer />
         <PageUp />
