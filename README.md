@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚖️ JUDBR
 
-## Getting Started
+> Portal de informações e recursos jurídicos brasileiros, desenvolvido com tecnologias modernas e foco em performance.
 
-First, run the development server:
+## 💡 Sobre o Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O JUDBR é uma plataforma web que visa facilitar o acesso à informação jurídica brasileira, oferecendo uma interface moderna e intuitiva para consulta de dados e recursos relacionados ao sistema judiciário nacional.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Core
+- [Next.js 14](https://nextjs.org/) - Framework React com SSR
+- [React 18](https://reactjs.org/) - Biblioteca JavaScript para interfaces
+- [TypeScript](https://www.typescriptlang.org/) - JavaScript com tipagem estática
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Estilização
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitário
 
-## Learn More
+## 💻 Funcionalidades
 
-To learn more about Next.js, take a look at the following resources:
+- Consulta de informações jurídicas
+- Interface responsiva e moderna
+- Navegação intuitiva
+- Otimizado para SEO
+- Performance de carregamento rápido
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Como executar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/helxysa/judbr-apju.git
+   ```
+2. Instale as dependências
+   ```bash
+   npm install
+   ```
+3. Execute a aplicação em modo de desenvolvimento
+   ```bash
+   npm run dev
+   ```
+4. O servidor iniciará na porta:3000 - acesse http://localhost:3000 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Requisitos do Sistema
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Node.js 18.x ou superior
+- NPM ou Yarn
+- Git
+
+---
+
+Desenvolvido por [helxysa](https://github.com/seu-usuario)
