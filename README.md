@@ -1,6 +1,6 @@
 # ⚖️ JUDBR
 
-> Portal de informações e recursos jurídicos brasileiros, desenvolvido com tecnologias modernas e foco em performance.
+> Ladingpage de apresentação do Sistema JUDBR.
 
 ## 💡 Sobre o Projeto
 
