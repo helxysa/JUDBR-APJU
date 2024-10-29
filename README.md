@@ -2,10 +2,6 @@
 
 > Ladingpage de apresentação do Sistema JUDBR.
 
-## 💡 Sobre o Projeto
-
-O JUDBR é uma plataforma web que visa facilitar o acesso à informação jurídica brasileira, oferecendo uma interface moderna e intuitiva para consulta de dados e recursos relacionados ao sistema judiciário nacional.
-
 ## 🚀 Tecnologias Utilizadas
 
 ### Core
