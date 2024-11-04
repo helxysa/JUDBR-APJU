@@ -3,36 +3,36 @@ import  Button  from "../Button/Button";
 import { Animation } from "../useIntersectionAnimation/Animation";
 
 export default function Prices() {
-    return (
-      <div className=" min-h-screen   max-w-screen-2xl mx-auto  4xl:max-w-screen-3xl " id="precos">
-        <main className="container mx-auto px-4 sm:px-20 py-6 sm:py-10 pt-10 sm:pt-20 pb-8 sm:pb-16 3xl:mb-[20px]  ">
-          <div className="text-center">
-            <span className="text-judbr-main text-xs sm:text-sm font-semibold border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-2">
-              Nossos Planos
-            </span>
-            <h1 className="text-3xl sm:text-4xl text-judbr-gray-dark sm:text-5xl font-bold mt-2 pt-3 sm:pt-5">
-              Planos <span className="text-judbr-main">flexiveis</span><br className="hidden sm:inline" />
-              pra sua necessidade
-            </h1>
-            <p className="text-base sm:text-lg sm:text-xl text-judbr-gray-light mt-3 sm:mt-4 max-w-3xl mx-auto">
-              Independente do tamanho do seu escritório, temos um plano perfeito para você.
-            </p>
-            <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Mensalidade" className="px-8 py-3 mt-4" />
-          </div>
-        </main>
-        <PricesWithCustom />
-       <PricingComparison />
+  return (
+    <div className="bg-gradient-to-b from-white to-gray-50 py-12 md:py-24 overflow-hidden w-full" id="precos">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="text-judbr-main text-xs md:text-sm font-semibold border-2 border-judbr-main/20 rounded-full px-3 py-1 md:px-4 md:py-2 mb-2 sm:mb-4 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+            Nossos Planos
+          </span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark pt-3 font-bold mt-2 sm:mt-4">
+            Planos <span className="text-judbr-main">flexiveis</span><br className="hidden sm:inline" />
+            pra sua necessidade
+          </h1>
+          <p className="text-base md:text-lg lg:text-xl text-judbr-gray-light mt-3 md:mt-4">
+            Independente do tamanho do seu escritório, temos um plano perfeito para voc��.
+          </p>
+          <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Mensalidade" className="px-8 py-3 mt-4" />
+        </div>
       </div>
-    )
-  }
+      <PricesWithCustom />
+      <PricingComparison />
+    </div>
+  )
+}
 
   export function PricesWithCustom() {
     const itemRef = Animation<HTMLDivElement>();
 
     return (
-      <div ref={itemRef} className='opacity-0 ' >
-        <main className="container mx-auto px-4 sm:px-6 lg:px-20 py-10 pt-20 pb-16 ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12">
+      <div ref={itemRef} className='opacity-0'>
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-20 pb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 max-w-7xl mx-auto">
             {/* Iniciante Plan */}
             <PriceCard
               title="Advogado"
@@ -99,43 +99,53 @@ export default function Prices() {
     readonly highlighted?: boolean 
   }) {
     return (
-      <div className={`bg-white rounded-lg shadow-md p-6 flex flex-col justify-between sm:max-w-[300px] md:max-w-[320px] mx-auto ${highlighted ? 'border-2 border-purple-200' : ''}`}>
-
-        <div className="">
-          <h3 className="text-lg font-semibold mb-2 text-judbr-gray-dark">{title}</h3>
-          <p className="text-sm text-judbr-gray-light mb-4">{description}</p>
-          <div className="mb-6">
+      <div className={`
+        bg-white rounded-2xl p-8
+        transform hover:-translate-y-3 transition-all duration-500
+        border-2 ${highlighted ? 'border-judbr-main/30' : 'border-gray-100'} hover:border-judbr-main/30
+        hover:shadow-[0_25px_70px_rgba(8,_112,_184,_0.2)]
+        group relative backdrop-blur-sm
+        animate-fade-in-up
+        max-w-[340px] mx-auto w-full
+        flex flex-col
+        min-h-[520px]
+      `}>
+        {/* Conteúdo do topo */}
+        <div className="mb-auto">
+          <h3 className="text-lg font-semibold mb-2 text-judbr-gray-dark group-hover:text-judbr-main transition-colors duration-500">{title}</h3>
+          <p className="text-sm text-judbr-gray-light mb-4 group-hover:text-gray-700 transition-colors duration-500">{description}</p>
+          <div className="mb-6 mt-10">
             <span className="text-2xl font-bold text-judbr-gray-dark align-top">R$</span>
             <span className="text-5xl font-bold text-judbr-gray-dark">{price}</span>
             <span className="text-judbr-gray-light">/mês</span>
           </div>
         </div>
-        <Button
-          href="#"
-          text="Contratar"
-          className="w-full py-2 px-4 transition duration-300"
-          bgColors={
-            highlighted
-              ? { default: 'bg-judbr-main', hover: 'hover:bg-judbr-gray-dark' }
-              : { default: 'bg-[#F4F7FE]', hover: 'hover:bg-judbr-gray-dark' }
-          }
-          textColor={
-            highlighted
-              ? { default: 'text-white', hover: 'hover:text-white' }
-              : { default: 'text-judbr-gray-dark', hover: 'hover:text-white' }
-          }
-        />
-        <ul className="mt-6 space-y-2">
+
+        {/* Botão */}
+        <button 
+          className={`
+            w-full py-2 rounded-full font-medium text-base
+            transition-all duration-300 mb-8
+            ${highlighted 
+              ? 'bg-judbr-main text-white group-hover:bg-gray-800' 
+              : 'bg-[#F4F7FE] text-judbr-gray-dark group-hover:bg-gray-800 group-hover:text-white'
+            }
+          `}
+        >
+          Contratar
+        </button>
+
+        {/* Lista de features no final */}
+        <ul className="space-y-4 mt-10">
           {features.map((feature, index) => (
-            <li key={`${title}-${feature}-${index}`} className="flex items-center text-sm text-judbr-gray-dark">
-              <svg className="w-4 h-4 mr-2 text-judbr-gray-light" fill="currentColor" viewBox="0 0 20 20">
+            <li key={`${title}-${feature}-${index}`} className="flex items-center text-sm text-judbr-gray-dark group-hover:text-gray-700 transition-colors duration-500">
+              <svg className="w-4 h-4 mr-2 text-judbr-main" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
               </svg>
               {feature}
             </li>
           ))}
         </ul>
-     
       </div>
     )
   }
@@ -244,82 +254,100 @@ function PricingComparison() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <div className="container mx-auto md:px-6 md:py-5 px-1 py-8 max-w-5xl">
-      <h1 className="text-2xl sm:text-3xl text-judbr-gray-dark font-bold text-center mb-6 sm:mb-8" id='compare-judbr-plans'>
-        Compare os planos do JUDBR
-      </h1>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-7xl">
+      {/* Header Section */}
+      <div className="text-center mb-10">
+        <h2 className="text-2xl md:text-3xl text-judbr-gray-dark font-bold mb-3" id='compare-judbr-plans'>
+          Compare os planos do <span className="text-judbr-main">JUDBR</span>
+        </h2>
+        <p className="text-judbr-gray-light text-base md:text-lg mb-6">
+          Escolha o plano ideal para o seu escritório
+        </p>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-xs sm:text-sm text-left text-gray-500">
-          <thead className="text-xs text-gray-800 uppercase bg-white border-b">
+        {/* Toggle de preços */}
+        <div className="inline-flex items-center justify-center bg-gray-50 p-1 rounded">
+          <button 
+            className={`px-4 py-2 text-sm transition-all ${!isAnnual 
+              ? 'bg-white text-judbr-main shadow-sm font-medium' 
+              : 'text-judbr-gray-light hover:text-judbr-gray-dark'}`}
+            onClick={() => setIsAnnual(false)}
+          >
+            Mensal
+          </button>
+          <button 
+            className={`px-4 py-2 text-sm transition-all ${isAnnual 
+              ? 'bg-white text-judbr-main shadow-sm font-medium' 
+              : 'text-judbr-gray-light hover:text-judbr-gray-dark'}`}
+            onClick={() => setIsAnnual(true)}
+          >
+            Anual <span className="text-green-500 text-xs ml-1">(20% off)</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Tabela Responsiva */}
+      <div className="hidden md:block overflow-hidden border border-gray-200">
+        <table className="w-full text-sm divide-y divide-gray-200">
+          <thead className="bg-gray-50">
             <tr>
-              <th scope="col" className="px-2 sm:px-6 py-2 sm:py-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2 sm:text-[2px]">
-                    <span className={`md:text-sm text-xs ${!isAnnual ? 'font-bold' : ''}`}>Mensal</span>
-                    <label className="relative inline-flex items-center cursor-pointer">
-                      <input 
-                        type="checkbox" 
-                        value="" 
-                        className="sr-only peer" 
-                        checked={isAnnual} 
-                        onChange={() => setIsAnnual(!isAnnual)} 
-                      />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-gray-300 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-gray-600"></div>
-                    </label>
-                    <span className={`text-sm ${isAnnual ? 'font-bold' : ''}`}>
-                      Anual <span className="text-green-500 text-xs">(20% off)</span>
-                    </span>
-                  </div>
-                </div>
+              <th scope="col" className="px-6 py-5 text-left">
+                Recursos
               </th>
               {plans.map((plan, index) => (
                 <th 
                   key={index} 
                   scope="col" 
-                  className={`px-2 sm:px-6 py-2 sm:py-3 text-center relative ${plan.name === 'BANCA' ? 'bg-gray-50' : ''}`}
+                  className={`px-6 py-5 text-center relative ${
+                    plan.name === 'BANCA' ? 'bg-judbr-main/5' : ''
+                  }`}
                 >
                   {plan.name === 'BANCA' && (
-                    <div className="absolute top-0 left-0 right-0 bg-[#24B364] text-white text-xs font-semibold py-1">
-                      POPULAR
+                    <div className="absolute -top-px left-0 right-0">
+                      <span className="bg-judbr-main text-white text-xs font-medium px-3 py-1">
+                        MAIS POPULAR
+                      </span>
                     </div>
                   )}
-                  <div className={`${plan.name === 'BANCA' ? 'mt-6' : ''}`}>
-                    {plan.name}
-                    <div className="text-lg sm:text-2xl font-bold text-gray-800">
+                  <div className={`${plan.name === 'BANCA' ? 'mt-6' : 'mt-2'}`}>
+                    <div className="font-medium text-judbr-gray-dark">
+                      {plan.name}
+                    </div>
+                    <div className="text-2xl font-bold text-judbr-main mt-2">
                       R${isAnnual ? plan.annualPrice : plan.monthlyPrice}
                     </div>
-                    <div className="text-xs">por usuário/mês</div>
+                    <div className="text-judbr-gray-light text-xs mt-1">por usuário/mês</div>
                   </div>
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white divide-y divide-gray-200">
             {features.map((feature, featureIndex) => (
               <React.Fragment key={`feature-${featureIndex}`}>
                 {feature.category !== features[featureIndex - 1]?.category && (
-                  <tr key={`category-${feature.category}`} className="bg-gray-50 border-t border-b">
-                    <td colSpan={plans.length + 1} className="px-2 sm:px-6 py-4 font-bold text-gray-700">
+                  <tr>
+                    <td colSpan={plans.length + 1} className="px-6 py-3 bg-gray-50 text-xs font-medium text-judbr-main">
                       {feature.category}
                     </td>
                   </tr>
                 )}
-                <tr className="bg-white border-b">
-                  <th scope="row" className="px-2 sm:px-6 py-2 sm:py-4 font-medium text-gray-800 whitespace-normal sm:whitespace-nowrap">
+                <tr className="hover:bg-gray-50/50 transition-colors">
+                  <th scope="row" className="px-6 py-4 text-sm font-medium text-judbr-gray-dark text-left">
                     {feature.name}
                   </th>
                   {plans.map((plan, planIndex) => (
                     <td 
                       key={`plan-${planIndex}`} 
-                      className={`px-2 sm:px-6 py-2 sm:py-4 text-center ${plan.name === 'BANCA' ? 'bg-gray-50' : ''}`}
+                      className={`px-6 py-4 text-center ${
+                        plan.name === 'BANCA' ? 'bg-judbr-main/5' : ''
+                      }`}
                     >
                       {(isAnnual ? plan.annualFeatures : plan.monthlyFeatures).includes(feature.name) ? (
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[#24B364] mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                        <svg className="w-5 h-5 text-judbr-main mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
                         </svg>
                       ) : (
-                        <span className="text-gray-400">-</span>
+                        <span className="text-judbr-gray-light">—</span>
                       )}
                     </td>
                   ))}
@@ -328,6 +356,49 @@ function PricingComparison() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Versão Mobile - Cards */}
+      <div className="md:hidden space-y-6">
+        {plans.map((plan, index) => (
+          <div 
+            key={index}
+            className={`border bg-white p-6 ${
+              plan.name === 'BANCA' ? 'border-judbr-main/20 relative' : 'border-gray-200'
+            }`}
+          >
+            {plan.name === 'BANCA' && (
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-judbr-main text-white text-xs font-medium px-3 py-1">
+                  MAIS POPULAR
+                </span>
+              </div>
+            )}
+            
+            <div className="text-center mb-6">
+              <h3 className="text-lg font-medium text-judbr-gray-dark">{plan.name}</h3>
+              <div className="text-2xl font-bold text-judbr-main mt-2">
+                R${isAnnual ? plan.annualPrice : plan.monthlyPrice}
+              </div>
+              <div className="text-judbr-gray-light text-sm">por usuário/mês</div>
+            </div>
+
+            <div className="space-y-4">
+              {features.map((feature, featureIndex) => (
+                <div key={featureIndex} className="flex items-center">
+                  {(isAnnual ? plan.annualFeatures : plan.monthlyFeatures).includes(feature.name) ? (
+                    <svg className="w-5 h-5 text-judbr-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  ) : (
+                    <span className="w-5 h-5 flex-shrink-0 text-judbr-gray-light">—</span>
+                  )}
+                  <span className="ml-3 text-sm text-judbr-gray-dark">{feature.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -36,23 +36,15 @@ const ArrowIcon = () => {
   );
 };
 
-//3XL - Monitor Medio
-// 4xl Monitor Grande
-//LG: Notebook em geral
-//m: Tablet 
-//sm: Mobile
-
 export default function Steps() {
-  const itemRef = Animation<HTMLDivElement>();
-
   return (
-    <div className="bg-white max-h-screen  max-w-screen-2xl  mx-auto  4xl:max-w-screen-3xl p-10 border-b border-gray-300 border-t border-gray-300">
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-8 lg:py-12 xl:py-16 3xl:-pb-[230px]">
-        <div ref={itemRef} className="text-center opacity-0 max-w-4xl mx-auto">
-          <span className="text-judbr-main text-xs md:text-sm font-semibold border border-gray-200 rounded-full px-3 py-1 md:px-4 md:py-2">
+    <div className=" py-12 md:py-24 overflow-hidden bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="text-judbr-main text-xs md:text-sm font-semibold border-2 border-judbr-main/20 rounded-full px-3 py-1 md:px-4 md:py-2 mb-2 sm:mb-4 bg-white shadow-sm hover:shadow-md transition-all duration-300">
             Como Funciona
           </span>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark font-bold mt-2 pt-2 md:pt-3">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark pt-3 font-bold mt-2 sm:mt-4">
             Veja como funciona <span className="text-judbr-main">nosso processo</span>
           </h1>
           <p className="text-base md:text-lg lg:text-xl text-judbr-gray-light mt-3 md:mt-4">
@@ -60,7 +52,7 @@ export default function Steps() {
           </p>
         </div>
         <StepContent />
-      </main>
+      </div>
     </div>
   );
 }
@@ -84,5 +76,5 @@ function StepContent() {
         ))}
       </div>
     </div>
-  )
+  );
 }

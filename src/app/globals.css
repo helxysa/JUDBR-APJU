@@ -36,7 +36,10 @@ html {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  body {
+    background: linear-gradient(to bottom, white, rgb(249 250 251)); 
+    min-height: 100vh;
+  }
   animation: smooth-scroll linear;
   font-family: Arial, Helvetica, sans-serif;
 }

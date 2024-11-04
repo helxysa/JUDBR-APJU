@@ -14,21 +14,32 @@ export default function Nav() {
   return (
     <header className="bg-white text-xm">
     <nav className="bg-white fixed top-0 w-full z-50 border-b border-gray-100">
-      <div className="container-responsive py-3 flex items-center justify-around">
+      <div className="container mx-auto  px-1 4xl:px-[290px] 3xl:px-[350px] 2xl:px-[90px] 1xl:px-[60px] md:px-[70px] ">
+        <div className="py-3 flex items-center justify-between">
           <Link href="/" className="text-judbr-main font-bold text-xl">
+            {/* Desktop Logo */}
             <Image
               src="/images/judbr2.png.png"
               alt="Logo"
-              width={130}
+              width={100}
               height={120}
+              className="w-auto h-8 hidden md:block md:h-auto"
+            />
+            {/* Mobile Logo */}
+            <Image
+              src="/images/judbr2.png.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="w-auto h-4 md:hidden"
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
             <Link
               href="/"
-              className="text-judbr-main hover:text-gray-200"
+              className="text-judbr-main hover:text-gray-200 text-sm lg:text-base"
             >
               Inicio
             </Link>
@@ -70,16 +81,14 @@ export default function Nav() {
               Planos e Preços
             </Link>
             <Link
-              href="/pages/QuemSomos"
+              href="#quem-somos"
               className="text-judbr-main hover:text-gray-200"
             >
               Quem Somos
             </Link>
-          
           </div>
 
-          
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             <div className="relative inline-block overflow-hidden group">
               <Link
                 href="https://app.judbr.com.br/auth/register/"
@@ -95,7 +104,8 @@ export default function Nav() {
               </Link>
             </div>
             <Link
-              href="https://app.judbr.com.br/auth/login/" target="_blank"
+              href="https://app.judbr.com.br/auth/login/"
+              target="_blank"
               className="text-judbr-main hover:text-gray-200"
             >
               Entrar
@@ -105,8 +115,7 @@ export default function Nav() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden text-judbr-main focus:outline-none"
-            aria-label="Menu"
+            className="md:hidden p-2 text-judbr-main hover:bg-gray-100 rounded-lg"
           >
             <svg
               className="w-6 h-6"
@@ -124,97 +133,103 @@ export default function Nav() {
             </svg>
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`fixed inset-0 z-50 bg-judbr-main transform ${
-            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-in-out md:hidden`}
-        >
-          <div className="flex flex-col h-full w-full">
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <Link href="/" className="text-white font-bold text-xl">
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-50 bg-judbr-main transform ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out md:hidden`}
+      >
+        <div className="flex flex-col h-full">
+          {/* Mobile Menu Header */}
+          <div className="flex items-center justify-between p-4 border-b border-white/20">
+            <div className="flex items-center gap-2">
+              <div className="w-[60px]">
                 <Image
-                  src="/images/judbr2.png.png"
-                  alt="Logo"
-                  width={100}
+                  src="/images/judbr-white.png"
+                  alt="Logo Judbr"
+                  width={90}
                   height={90}
+                  className="w-full h-auto brightness-0 invert"
                 />
-              </Link>
-              <button
-                onClick={toggleMobileMenu}
-                className="text-white focus:outline-none"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="flex-grow overflow-y-auto">
-              <div className="px-4 py-2 space-y-1">
-                <Link
-                  href="/precos"
-                  className="block text-white hover:text-gray-200 py-2 border-b border-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Preços
-                </Link>
-                <div>
-                  <Link
-                    href="/solucoes"
-                    className="flex items-center justify-between w-full text-white hover:text-gray-200 py-2 border-b border-white"
-                  >
-                    Soluções
-                  </Link>
-                </div>
-                <Link
-                  href="/recursos"
-                  className="block text-white hover:text-gray-200 py-2 border-b border-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Já possui uma conta?
-                </Link>
-                <Link
-                  href="/sobre-nos"
-                  className="block text-white hover:text-gray-200 py-2 border-b border-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Quem somos
-                </Link>
-                <Link
-                  href="/contato"
-                  className="block text-white hover:text-gray-200 py-2 border-b border-white"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contato
-                </Link>
               </div>
             </div>
-            <div className="mt-auto p-4 space-y-4">
-              
+            <button
+              onClick={toggleMobileMenu}
+              className="p-2 text-white hover:bg-white/10 rounded-lg transition-colors duration-200"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Mobile Menu Items */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="px-4 py-2">
               <Link
-                href="https://app.judbr.com.br/auth/register/"
-                target="_blank"
-                className="block bg-white text-judbr-gray-dark rounded-full px-4 py-2 hover:bg-gray-200 text-center"
+                href="/"
+                className="block text-white py-3 border-b border-white/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Experimente Grátis
+                Início
+              </Link>
+              <Link
+                href="/solucoes"
+                className="block text-white py-3 border-b border-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Soluções
+              </Link>
+              <Link
+                href="/#precos"
+                className="block text-white py-3 border-b border-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Preços
+              </Link>
+              <Link
+                href="/#quem-somos"
+                className="block text-white py-3 border-b border-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Quem Somos
+              </Link>
+              <Link
+                href="/#contato"
+                className="block text-white py-3 border-b border-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contato
               </Link>
             </div>
           </div>
+
+          {/* Mobile Menu Footer */}
+          <div className="p-4 border-t border-white/20">
+            <Link
+              href="https://app.judbr.com.br/auth/register/"
+              target="_blank"
+              className="block w-full bg-white text-judbr-main text-center py-3 rounded-lg font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Experimente Grátis
+            </Link>
+          </div>
         </div>
-      </nav>
-    </header>
-  );
+      </div>
+    </nav>
+  </header>
+);
 }

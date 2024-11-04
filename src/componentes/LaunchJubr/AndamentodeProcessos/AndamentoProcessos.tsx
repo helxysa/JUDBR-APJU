@@ -6,7 +6,7 @@ export default function Funcionalidades() {
     const itemRef = Animation<HTMLDivElement>();
 
   return (
-    <div ref={itemRef} className="bg-white min-h-screen pt-5 md:pt-10 opacity-0 ">
+    <div ref={itemRef} className="min-h-screen pt-5 md:pt-10 opacity-0">
       <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-5 md:pt-10 4xl:-pb-[500px] 3xl:-pb-[130px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {/* Andamento de processos */}

@@ -8,9 +8,9 @@ export default function Funcionalidades() {
 const itemRef = Animation<HTMLDivElement>();
 
   return (
-    <div ref={itemRef} className="bg-white min-h-screen pt-10 opacity-0  border-b border-gray-200 ">
-      <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-10">
-        <div className="bg-[#F4F7FE] rounded-1xl p-6 lg:p-[70px] rounded-xl ">
+    <div ref={itemRef} className="min-h-screen pt-10 opacity-0 w-full">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-10 ">
+        <div className="bg-[#F4F7FE] rounded-1xl p-6 lg:p-[70px] rounded-xl">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             {/* Left side content */}
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left">
@@ -61,8 +61,8 @@ function FeatureItem({ icon, text }: { icon: React.ReactNode; text: string }) {
     const itemRef = Animation<HTMLDivElement>();
 
   return (
-    <div ref={itemRef} className="flex items-center space-x-4 bg-white rounded-lg p-2 opacity-0">
-      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-judbr-main flex-shrink-0">
+    <div ref={itemRef} className="flex items-center space-x-4 rounded-lg p-2 opacity-0">
+      <div className="w-10 h-10  backdrop-blur-sm rounded-full flex items-center justify-center text-judbr-main flex-shrink-0">
         {icon}
       </div>
       <span className="text-gray-800 text-xm font-medium">{text}</span>
