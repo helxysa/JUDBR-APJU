@@ -27,7 +27,6 @@ export default function HeroSection() {
     <div className="bg-judbr-bg-dark max-h-screen 2xl:px-40 md:pb-40 pb-[40px] sm:pb-20">
       <main className="container mx-auto px-10 sm:px-6 md:px-6 4xl:px-[180px] 3xl:px-[120px] py-10 pt-20 lg:py-[170px] pb-16 lg:pb-0">
         <div className="flex flex-col lg:flex-row items-center justify-around">
-          {/* Left side: Text content */}
           <div className="w-full lg:w-5/12">
             <h1 className="font-semibold mb-6 text-center lg:text-left">
               <span className="text-judbr-main text-4xl sm:text-3xl lg:text-5xl font-bold">
@@ -82,7 +81,6 @@ export default function HeroSection() {
             </div>
           </div>
           
-          {/* Right side: Image */}
           <div className="w-full lg:w-5/12 relative mt-12 lg:mt-0">
           <video 
                   src="/video/pratice-panther.mp4" 

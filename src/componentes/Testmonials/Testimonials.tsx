@@ -24,13 +24,13 @@ const testimonials = [
 export default function Testimonials() {
     const itemRef = Animation<HTMLDivElement>();
   return (
-    <section className=" py-12 md:py-24 overflow-hidden">
-      <div className="container mx-auto px-1 sm:px-2 lg:px-4 animate-fade-in">
+    <section className="py-12 md:py-24 overflow-hidden bg-gradient-to-b from-white to-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="text-center mb-12 md:mb-20 animate-slide-up">
-        <span className="text-judbr-main text-xs md:text-sm font-semibold border border-gray-200 rounded-full px-3 py-1 md:px-4 md:py-2 mb-2 sm:mb-4">
+          <span className="text-judbr-main text-xs md:text-sm font-semibold border-2 border-judbr-main/20 rounded-full px-3 py-1 md:px-4 md:py-2 mb-2 sm:mb-4 bg-white shadow-sm hover:shadow-md transition-all duration-300">
             Depoimentos
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold mt-6 px-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark pt-3 font-bold mt-2 sm:mt-4">
             <span className="text-judbr-main">Depoimentos </span>
             <span className="text-judbr-gray-dark">dos Nossos Clientes</span>
           </h2>

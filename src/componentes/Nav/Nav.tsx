@@ -17,7 +17,6 @@ export default function Nav() {
       <div className="container mx-auto  px-1 4xl:px-[290px] 3xl:px-[350px] 2xl:px-[90px] 1xl:px-[60px] md:px-[70px] ">
         <div className="py-3 flex items-center justify-between">
           <Link href="/" className="text-judbr-main font-bold text-xl">
-            {/* Desktop Logo */}
             <Image
               src="/images/judbr2.png.png"
               alt="Logo"
@@ -25,7 +24,6 @@ export default function Nav() {
               height={120}
               className="w-auto h-8 hidden md:block md:h-auto"
             />
-            {/* Mobile Logo */}
             <Image
               src="/images/judbr2.png.png"
               alt="Logo"
@@ -35,7 +33,6 @@ export default function Nav() {
             />
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-3 lg:space-x-6">
             <Link
               href="/"
@@ -45,33 +42,11 @@ export default function Nav() {
             </Link>
             <div className="relative group">
               <Link
-                href="/solucoes"
+                href="#solucoes"
                 className="text-judbr-main hover:text-gray-200 flex items-center"
               >
                 Soluções
               </Link>
-              <div className="absolute left-0 mt-1 w-56 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
-                <div className="py-2">
-                  <Link
-                    href="/solucoes/advogado"
-                    className="block px-6 py-3 text-judbr-main hover:bg-gray-50 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
-                  >
-                    Advogado
-                  </Link>
-                  <Link
-                    href="/solucoes/escritorio"
-                    className="block px-6 py-3 text-judbr-main hover:bg-gray-50 transition-colors duration-150"
-                  >
-                    Escritório
-                  </Link>
-                  <Link
-                    href="/solucoes/banca"
-                    className="block px-6 py-3 text-judbr-main hover:bg-gray-50 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg"
-                  >
-                    Banca
-                  </Link>
-                </div>
-              </div>
             </div>
            
             <Link
@@ -112,7 +87,6 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
             className="md:hidden p-2 text-judbr-main hover:bg-gray-100 rounded-lg"
@@ -135,14 +109,12 @@ export default function Nav() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-50 bg-judbr-main transform ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
         <div className="flex flex-col h-full">
-          {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-4 border-b border-white/20">
             <div className="flex items-center gap-2">
               <div className="w-[60px]">
@@ -175,7 +147,6 @@ export default function Nav() {
             </button>
           </div>
 
-          {/* Mobile Menu Items */}
           <div className="flex-1 overflow-y-auto">
             <div className="px-4 py-2">
               <Link
@@ -186,37 +157,30 @@ export default function Nav() {
                 Início
               </Link>
               <Link
-                href="/solucoes"
+                href="#solucoes"
                 className="block text-white py-3 border-b border-white/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Soluções
               </Link>
               <Link
-                href="/#precos"
+                href="#precos"
                 className="block text-white py-3 border-b border-white/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Preços
               </Link>
               <Link
-                href="/#quem-somos"
+                href="#quem-somos"
                 className="block text-white py-3 border-b border-white/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Quem Somos
               </Link>
-              <Link
-                href="/#contato"
-                className="block text-white py-3 border-b border-white/20"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contato
-              </Link>
             </div>
           </div>
 
-          {/* Mobile Menu Footer */}
+  
           <div className="p-4 border-t border-white/20">
             <Link
               href="https://app.judbr.com.br/auth/register/"

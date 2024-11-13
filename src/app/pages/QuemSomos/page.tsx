@@ -12,14 +12,15 @@ export default function QuemSomos() {
 
     return (
       
-      <div className="bg-gradient-to-b from-white to-gray-50 min-h-screen" id="quem-somos">
-        <div  className="min-h-fit py-8 md:py-12 lg:py-16 w-full max-w-screen-2xl 4xl:max-w-screen-3xl mx-auto">
+      <div className=" py-12 md:py-24 overflow-hidden bg-gradient-to-b from-white to-gray-50 space-y-12" id="quem-somos">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="text-center max-w-6xl mx-auto">
           <main  className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div  className="text-center max-w-4xl mx-auto animate-fade-in mb-12 md:mb-20">
               
-            <span className="text-judbr-main text-xs sm:text-sm font-semibold border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-2 inline-block mb-2 sm:mb-4">
-                Quem Somos
-              </span>
+            <span className="text-judbr-main text-xs md:text-sm font-semibold border-2 border-judbr-main/20 rounded-full px-3 py-1 md:px-4 md:py-2 mb-2 sm:mb-4 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+            Quem somos
+          </span>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark font-bold mt-4 px-4">
                 Conheça a{" "}
                 <span className="text-judbr-main">nossa história</span>
@@ -37,6 +38,7 @@ export default function QuemSomos() {
 
 
           </main>
+          </div>
         </div>
       </div>
   );
@@ -47,7 +49,6 @@ function Teste(){
   return (
     <div ref={itemRef}>
         <div className="pb-12 md:pb-20 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 px-4 md:px-6 max-w-7xl mx-auto">
-  {/* Container da Imagem */}
   <div className="w-full md:w-1/2 group" >
     <div className="relative rounded-2xl overflow-hidden 
       transform transition-all duration-500 
@@ -66,7 +67,6 @@ function Teste(){
     </div>
   </div>
 
-  {/* Container do Texto */}
   <div className="w-full md:w-1/2 space-y-6 md:space-y-8 mt-8 md:mt-0">
     <div className="space-y-4 md:space-y-6">
       <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-gray-700">
@@ -154,26 +154,22 @@ function NossaHistoria() {
 
       <div className="max-w-4xl mx-auto">
         <div className="relative">
-          {/* Linha central */}
           <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-judbr-main/20 via-judbr-main to-judbr-main/20"></div>
 
           <div className="space-y-12 md:space-y-24">
             {timelineItems.map((item) => (
               <div key={item.year} ref={item.ref} className="relative opacity-0">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  {/* Container Esquerdo */}
                   <div className="pl-12 md:pl-0 md:w-5/12">
                     {item.side === "left" && (
                       <TimelineCard year={item.year} text={item.text} />
                     )}
                   </div>
 
-                  {/* Ponto central */}
                   <div className="absolute left-0 md:left-1/2 top-0 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2">
                     <div className="w-8 h-8 bg-judbr-main rounded-full border-4 border-white shadow-lg hover:scale-125 transition-transform duration-300 hover:shadow-judbr-main/30"></div>
                   </div>
 
-                  {/* Container Direito */}
                   <div className="pl-12 md:pl-0 md:w-5/12">
                     {item.side === "right" && (
                       <TimelineCard year={item.year} text={item.text} />
@@ -223,7 +219,6 @@ function TimelineCard({ year, text }: { year: string; text: string }) {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 px-4 md:px-6 max-w-7xl mx-auto">
-          {/* Inovação */}
           <div className="flex-1 group relative bg-white rounded-2xl p-10
                       transform hover:-translate-y-4 transition-all duration-500
                       border-2 border-gray-100 hover:border-judbr-main/30
@@ -246,7 +241,6 @@ function TimelineCard({ year, text }: { year: string; text: string }) {
             </div>
           </div>
 
-          {/* Excelência */}
           <div className="flex-1 group relative bg-white rounded-2xl p-10
                       transform hover:-translate-y-4 transition-all duration-500
                       border-2 border-gray-100 hover:border-judbr-main/30
@@ -269,7 +263,6 @@ function TimelineCard({ year, text }: { year: string; text: string }) {
             </div>
           </div>
 
-          {/* Integridade */}
           <div className="flex-1 group relative bg-white rounded-2xl p-10
                       transform hover:-translate-y-4 transition-all duration-500
                       border-2 border-gray-100 hover:border-judbr-main/30
@@ -292,7 +285,6 @@ function TimelineCard({ year, text }: { year: string; text: string }) {
             </div>
           </div>
 
-          {/* Foco no Cliente */}
           <div className="flex-1 group relative bg-white rounded-2xl p-10
                       transform hover:-translate-y-4 transition-all duration-500
                       border-2 border-gray-100 hover:border-judbr-main/30
@@ -330,7 +322,6 @@ function TimelineCard({ year, text }: { year: string; text: string }) {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-24 gap-x-12 md:gap-8 px-4 max-w-6xl mx-auto pt-10">
-          {/* CEO Card */}
           <div className="flex-1 bg-white rounded-xl overflow-visible 
                       shadow-lg hover:shadow-2xl transition-all duration-300 
                       relative transform hover:-translate-y-2">
@@ -358,7 +349,6 @@ function TimelineCard({ year, text }: { year: string; text: string }) {
             </div>
           </div>
 
-          {/* CTO Card */}
           <div className="flex-1 bg-white rounded-xl overflow-visible 
                       shadow-lg hover:shadow-2xl transition-all duration-300 
                       relative transform hover:-translate-y-2">
@@ -386,7 +376,6 @@ function TimelineCard({ year, text }: { year: string; text: string }) {
             </div>
           </div>
 
-          {/* COO Card */}
           <div className="flex-1 bg-white rounded-xl overflow-visible 
                       shadow-lg hover:shadow-2xl transition-all duration-300 
                       relative transform hover:-translate-y-2">

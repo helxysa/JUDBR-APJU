@@ -37,7 +37,6 @@ export default function PageUp() {
       {isVisible && (
         <div className="fixed bottom-4 right-4 z-50">
           <div className="relative">
-            {/* Círculo de progresso */}
             <svg className="w-16 h-16 transform -rotate-90">
               <circle
                 className="text-gray-300"
@@ -61,7 +60,6 @@ export default function PageUp() {
                 cy="32"
               />
             </svg>
-            {/* Botão "Voltar ao topo" */}
             <button 
               onClick={scrollToTop} 
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-judbr-main text-white p-4 rounded-full shadow-lg hover:bg-judbr-main/80 transition-colors duration-300"

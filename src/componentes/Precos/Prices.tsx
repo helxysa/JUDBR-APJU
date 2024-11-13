@@ -1,6 +1,7 @@
 'use client'
 import  Button  from "../Button/Button";
 import { Animation } from "../useIntersectionAnimation/Animation";
+import Link from "next/link";
 
 export default function Prices() {
   return (
@@ -14,10 +15,25 @@ export default function Prices() {
             Planos <span className="text-judbr-main">flexiveis</span><br className="hidden sm:inline" />
             pra sua necessidade
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-judbr-gray-light mt-3 md:mt-4">
-            Independente do tamanho do seu escritório, temos um plano perfeito para voc��.
+          <p className="text-base md:text-lg lg:text-xl text-judbr-gray-light mt-3 md:mt-4 pb-10">
+            Independente do tamanho do seu escritório, temos um plano perfeito para você.
           </p>
-          <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Mensalidade" className="px-8 py-3 mt-4" />
+         <div>
+         <div className="relative inline-block overflow-hidden group  ">
+              <Link
+                href="https://app.judbr.com.br/auth/register/"
+                target="_blank"
+                className="inline-flex items-center justify-center bg-judbr-main text-gray-100 px-8 py-3 rounded-full transition-all duration-500 ease-in-out hover:bg-gray-800"
+              >
+                <span className="relative inline-block transition-all duration-500 ease-in-out group-hover:transform group-hover:-translate-y-full group-hover:opacity-0">
+                  Mensalidade
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0">
+                  Mensalidade
+                </span>
+              </Link>
+            </div>
+         </div>
         </div>
       </div>
       <PricesWithCustom />
@@ -33,7 +49,6 @@ export default function Prices() {
       <div ref={itemRef} className='opacity-0'>
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-20 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-2 max-w-7xl mx-auto">
-            {/* Iniciante Plan */}
             <PriceCard
               title="Advogado"
               price="160"
@@ -46,7 +61,6 @@ export default function Prices() {
               ]}
             />
             
-            {/* Basic Plan */}
             <PriceCard
               title="Escritório"
               price="300"
@@ -60,7 +74,6 @@ export default function Prices() {
               highlighted={true}
             />
             
-            {/* Plus Plan */}
             <PriceCard
               title="Banca"
               price="590"
@@ -73,7 +86,6 @@ export default function Prices() {
               ]}
             />
             
-            {/* Customizado Plan */}
             <PriceCard
               title="Customizado"
               price="?"
@@ -110,7 +122,6 @@ export default function Prices() {
         flex flex-col
         min-h-[520px]
       `}>
-        {/* Conteúdo do topo */}
         <div className="mb-auto">
           <h3 className="text-lg font-semibold mb-2 text-judbr-gray-dark group-hover:text-judbr-main transition-colors duration-500">{title}</h3>
           <p className="text-sm text-judbr-gray-light mb-4 group-hover:text-gray-700 transition-colors duration-500">{description}</p>
@@ -121,7 +132,6 @@ export default function Prices() {
           </div>
         </div>
 
-        {/* Botão */}
         <button 
           className={`
             w-full py-2 rounded-full font-medium text-base
@@ -135,7 +145,6 @@ export default function Prices() {
           Contratar
         </button>
 
-        {/* Lista de features no final */}
         <ul className="space-y-4 mt-10">
           {features.map((feature, index) => (
             <li key={`${title}-${feature}-${index}`} className="flex items-center text-sm text-judbr-gray-dark group-hover:text-gray-700 transition-colors duration-500">
@@ -254,43 +263,40 @@ function PricingComparison() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-7xl">
-      {/* Header Section */}
-      <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl text-judbr-gray-dark font-bold mb-3" id='compare-judbr-plans'>
-          Compare os planos do <span className="text-judbr-main">JUDBR</span>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 max-w-7xl">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark font-bold mb-4" id='compare-judbr-plans'>
+          Compare os <span className="text-judbr-main">planos</span> disponíveis
         </h2>
-        <p className="text-judbr-gray-light text-base md:text-lg mb-6">
-          Escolha o plano ideal para o seu escritório
+        <p className="text-base md:text-lg lg:text-xl text-judbr-gray-light mb-8">
+          Encontre a solução ideal para seu escritório
         </p>
 
-        {/* Toggle de preços */}
-        <div className="inline-flex items-center justify-center bg-gray-50 p-1 rounded">
+        <div className="inline-flex items-center justify-center bg-gray-50 p-1.5 rounded-lg shadow-sm">
           <button 
-            className={`px-4 py-2 text-sm transition-all ${!isAnnual 
-              ? 'bg-white text-judbr-main shadow-sm font-medium' 
-              : 'text-judbr-gray-light hover:text-judbr-gray-dark'}`}
+            className={`px-6 py-2.5 text-sm rounded-md transition-all duration-300 ${!isAnnual 
+              ? 'bg-white text-gray-800 shadow-sm font-medium' 
+              : 'text-gray-500 hover:text-gray-700'}`}
             onClick={() => setIsAnnual(false)}
           >
             Mensal
           </button>
           <button 
-            className={`px-4 py-2 text-sm transition-all ${isAnnual 
-              ? 'bg-white text-judbr-main shadow-sm font-medium' 
-              : 'text-judbr-gray-light hover:text-judbr-gray-dark'}`}
+            className={`px-6 py-2.5 text-sm rounded-md transition-all duration-300 ${isAnnual 
+              ? 'bg-white text-gray-800 shadow-sm font-medium' 
+              : 'text-gray-500 hover:text-gray-700'}`}
             onClick={() => setIsAnnual(true)}
           >
-            Anual <span className="text-green-500 text-xs ml-1">(20% off)</span>
+            Anual <span className="text-emerald-600 text-xs ml-1">(20% off)</span>
           </button>
         </div>
       </div>
 
-      {/* Tabela Responsiva */}
-      <div className="hidden md:block overflow-hidden border border-gray-200">
+      <div className="hidden md:block overflow-hidden border border-gray-200 rounded-xl shadow-sm">
         <table className="w-full text-sm divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th scope="col" className="px-6 py-5 text-left">
+              <th scope="col" className="px-6 py-5 text-left text-gray-600">
                 Recursos
               </th>
               {plans.map((plan, index) => (
@@ -298,24 +304,24 @@ function PricingComparison() {
                   key={index} 
                   scope="col" 
                   className={`px-6 py-5 text-center relative ${
-                    plan.name === 'BANCA' ? 'bg-judbr-main/5' : ''
+                    plan.name === 'BANCA' ? 'bg-gray-50' : ''
                   }`}
                 >
                   {plan.name === 'BANCA' && (
                     <div className="absolute -top-px left-0 right-0">
-                      <span className="bg-judbr-main text-white text-xs font-medium px-3 py-1">
+                      <span className="bg-emerald-600 text-white text-xs font-medium px-4 py-1.5 rounded-full">
                         MAIS POPULAR
                       </span>
                     </div>
                   )}
-                  <div className={`${plan.name === 'BANCA' ? 'mt-6' : 'mt-2'}`}>
-                    <div className="font-medium text-judbr-gray-dark">
+                  <div className={`${plan.name === 'BANCA' ? 'mt-8' : 'mt-2'}`}>
+                    <div className="font-medium text-gray-800">
                       {plan.name}
                     </div>
-                    <div className="text-2xl font-bold text-judbr-main mt-2">
+                    <div className="text-3xl font-bold text-gray-900 mt-3">
                       R${isAnnual ? plan.annualPrice : plan.monthlyPrice}
                     </div>
-                    <div className="text-judbr-gray-light text-xs mt-1">por usuário/mês</div>
+                    <div className="text-gray-500 text-xs mt-1">por usuário/mês</div>
                   </div>
                 </th>
               ))}
@@ -326,28 +332,28 @@ function PricingComparison() {
               <React.Fragment key={`feature-${featureIndex}`}>
                 {feature.category !== features[featureIndex - 1]?.category && (
                   <tr>
-                    <td colSpan={plans.length + 1} className="px-6 py-3 bg-gray-50 text-xs font-medium text-judbr-main">
+                    <td colSpan={plans.length + 1} className="px-6 py-3 bg-gray-50 text-xs font-semibold text-gray-700">
                       {feature.category}
                     </td>
                   </tr>
                 )}
                 <tr className="hover:bg-gray-50/50 transition-colors">
-                  <th scope="row" className="px-6 py-4 text-sm font-medium text-judbr-gray-dark text-left">
+                  <th scope="row" className="px-6 py-4 text-sm font-medium text-gray-700 text-left">
                     {feature.name}
                   </th>
                   {plans.map((plan, planIndex) => (
                     <td 
                       key={`plan-${planIndex}`} 
                       className={`px-6 py-4 text-center ${
-                        plan.name === 'BANCA' ? 'bg-judbr-main/5' : ''
+                        plan.name === 'BANCA' ? 'bg-gray-50' : ''
                       }`}
                     >
                       {(isAnnual ? plan.annualFeatures : plan.monthlyFeatures).includes(feature.name) ? (
-                        <svg className="w-5 h-5 text-judbr-main mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-emerald-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
                         </svg>
                       ) : (
-                        <span className="text-judbr-gray-light">—</span>
+                        <span className="text-gray-400">—</span>
                       )}
                     </td>
                   ))}
@@ -358,42 +364,41 @@ function PricingComparison() {
         </table>
       </div>
 
-      {/* Versão Mobile - Cards */}
       <div className="md:hidden space-y-6">
         {plans.map((plan, index) => (
           <div 
             key={index}
-            className={`border bg-white p-6 ${
-              plan.name === 'BANCA' ? 'border-judbr-main/20 relative' : 'border-gray-200'
+            className={`border bg-white p-6 rounded-xl shadow-sm ${
+              plan.name === 'BANCA' ? 'border-emerald-200 relative' : 'border-gray-200'
             }`}
           >
             {plan.name === 'BANCA' && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-judbr-main text-white text-xs font-medium px-3 py-1">
+                <span className="bg-emerald-600 text-white text-xs font-medium px-4 py-1.5 rounded-full">
                   MAIS POPULAR
                 </span>
               </div>
             )}
             
-            <div className="text-center mb-6">
-              <h3 className="text-lg font-medium text-judbr-gray-dark">{plan.name}</h3>
-              <div className="text-2xl font-bold text-judbr-main mt-2">
+            <div className="text-center mb-8">
+              <h3 className="text-lg font-medium text-gray-800">{plan.name}</h3>
+              <div className="text-3xl font-bold text-gray-900 mt-3">
                 R${isAnnual ? plan.annualPrice : plan.monthlyPrice}
               </div>
-              <div className="text-judbr-gray-light text-sm">por usuário/mês</div>
+              <div className="text-gray-500 text-sm mt-1">por usuário/mês</div>
             </div>
 
             <div className="space-y-4">
               {features.map((feature, featureIndex) => (
                 <div key={featureIndex} className="flex items-center">
                   {(isAnnual ? plan.annualFeatures : plan.monthlyFeatures).includes(feature.name) ? (
-                    <svg className="w-5 h-5 text-judbr-main flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/>
                     </svg>
                   ) : (
-                    <span className="w-5 h-5 flex-shrink-0 text-judbr-gray-light">—</span>
+                    <span className="w-5 h-5 flex-shrink-0 text-gray-400">—</span>
                   )}
-                  <span className="ml-3 text-sm text-judbr-gray-dark">{feature.name}</span>
+                  <span className="ml-3 text-sm text-gray-700">{feature.name}</span>
                 </div>
               ))}
             </div>

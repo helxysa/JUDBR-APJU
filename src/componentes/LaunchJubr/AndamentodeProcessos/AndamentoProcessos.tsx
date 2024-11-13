@@ -9,7 +9,6 @@ export default function Funcionalidades() {
     <div ref={itemRef} className="min-h-screen pt-5 md:pt-10 opacity-0">
       <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-5 md:pt-10 4xl:-pb-[500px] 3xl:-pb-[130px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {/* Andamento de processos */}
           <div className="bg-[#F4F7FE] rounded-xl p-4 sm:p-6">
             <h3 className="text-judbr-main font-semibold mb-2 text-base sm:text-lg">
               Andamento de processos
@@ -45,7 +44,6 @@ export default function Funcionalidades() {
             </div>
           </div>
 
-          {/* Dúvidas de clientes */}
           <div className="bg-[#f8f9ff] rounded-xl p-4 sm:p-6">
             <h3 className="text-judbr-main font-semibold mb-2 text-base sm:text-lg">
               Dúvidas de clientes

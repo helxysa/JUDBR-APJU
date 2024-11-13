@@ -5,14 +5,14 @@ import Button from "../Button/Button";
 
 export default function LaunchJubr() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-white to-gray-50">
-      <div className="w-full max-w-screen-2xl 4xl:max-w-screen-3xl mx-auto pb-32 md:pb-16">
+    <div className="min-h-screen w-full bg-gradient-to-b from-white to-gray-50" id="solucoes">
+      <div className="w-full max-w-screen-2xl 4xl:max-w-screen-3xl mx-auto pb-16 md:pb-16">
         <main className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
-          <div className="text-center">
-            <span className="text-judbr-main text-xs sm:text-sm font-semibold border border-gray-200 rounded-full px-3 sm:px-4 py-1 sm:py-2 inline-block mb-2 sm:mb-4">
-              Gerencie seu escritório
-            </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark font-bold mt-2 sm:mt-4">
+          <div className="text-center pt-10">
+          <span className="text-judbr-main text-xs md:text-sm font-semibold border-2 border-judbr-main/20 rounded-full px-3 py-1 md:px-4 md:py-2 mb-2 sm:mb-4 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+            Gerencie seu escritório
+          </span>
+            <h1 className="text-2xl  pt-4 sm:text-3xl md:text-4xl lg:text-5xl text-judbr-gray-dark font-bold mt-2 sm:mt-4">
               Otimize a <span className="text-judbr-main">gestão do seu escritório</span> e <br className="hidden sm:inline" />
               aumente sua produtividade
             </h1>
@@ -39,7 +39,6 @@ function Funcionalidades() {
       <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-10">
         <div className="rounded-xl p-6 lg:p-[70px] bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            {/* Left side content */}
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left">
               <h3 className="text-judbr-main font-semibold mb-2 text-lg">
                 Funcionalidades
@@ -54,7 +53,6 @@ function Funcionalidades() {
               <Button href="https://app.judbr.com.br/auth/register/" target="_blank" text="Experimente Gratis" className=" px-8 py-3" />
             </div>
 
-            {/* Right side: Features */}
             <div className="w-full lg:w-5/12 mt-8 lg:mt-0">
               <div className="space-y-6">
                 <FeatureItem
@@ -176,13 +174,12 @@ function AndamentoProcessos() {
   const rightColumnRef = Animation<HTMLDivElement>();
 
   return (
-    <div className="w-full pt-5 md:pt-10">
-      <main className="container mx-auto px-4 sm:px-6 lg:px-[140px] pt-5 md:pt-10 pb-32 md:pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {/* Andamento de processos */}
+    <div className="w-full pt-2 md:pt-10">
+      <main className="container mx-auto px-2 sm:px-6 lg:px-[140px] pt-2 md:pt-10 pb-8 md:pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
           <div 
             ref={leftColumnRef} 
-            className="rounded-xl p-4 sm:p-6 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 transform translate-y-4"
+            className="rounded-xl p-3 sm:p-6 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 transform translate-y-4"
           >
             <h3 className="text-judbr-main font-semibold mb-2 text-base sm:text-lg">
               Andamento de processos
@@ -218,10 +215,9 @@ function AndamentoProcessos() {
             </div>
           </div>
 
-          {/* Dúvidas de clientes */}
           <div 
             ref={rightColumnRef} 
-            className="rounded-xl p-4 sm:p-6 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 transform translate-y-4"
+            className="rounded-xl p-3 sm:p-6 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 transform translate-y-4"
           >
             <h3 className="text-judbr-main font-semibold mb-2 text-base sm:text-lg">
               Dúvidas de clientes
