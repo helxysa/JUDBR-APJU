@@ -22,7 +22,6 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-    const itemRef = Animation<HTMLDivElement>();
   return (
     <section className="py-12 md:py-24 overflow-hidden bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
@@ -36,7 +35,7 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div ref={itemRef} className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
+        <div  className="grid grid-cols-1 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}

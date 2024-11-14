@@ -42,24 +42,36 @@ export default function Nav() {
             </Link>
             <div className="relative group">
               <Link
-                href="#solucoes"
+                href=""
                 className="text-judbr-main hover:text-gray-200 flex items-center"
               >
-                Soluções
+                Produtos
               </Link>
             </div>
            
             <Link
+              href="/#solucoes"
+              className="text-judbr-main hover:text-gray-200"
+            >
+              Soluções
+            </Link>
+            <Link
+              href="/#solucoes"
+              className="text-judbr-main hover:text-gray-200"
+            >
+              Recursos
+            </Link>
+            <Link
               href="/#precos"
               className="text-judbr-main hover:text-gray-200"
             >
-              Planos e Preços
+              Preços
             </Link>
             <Link
-              href="#quem-somos"
+              href="/pages/QuemSomos"
               className="text-judbr-main hover:text-gray-200"
             >
-              Quem Somos
+              Empresa
             </Link>
           </div>
 
@@ -112,9 +124,9 @@ export default function Nav() {
       <div
         className={`fixed inset-0 z-50 bg-judbr-main transform ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out md:hidden`}
+        } transition-transform duration-300 ease-in-out md:hidden `}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full " >
           <div className="flex items-center justify-between p-4 border-b border-white/20">
             <div className="flex items-center gap-2">
               <div className="w-[60px]">
@@ -157,25 +169,42 @@ export default function Nav() {
                 Início
               </Link>
               <Link
-                href="#solucoes"
+                href="/#solucoes"
+                className="block text-white py-3 border-b border-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Produtos
+              </Link>
+              <Link
+                href="/#solucoes"
                 className="block text-white py-3 border-b border-white/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Soluções
               </Link>
+
               <Link
-                href="#precos"
+                href="/#solucoes"
+                className="block text-white py-3 border-b border-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Recursos
+              </Link>
+
+              <Link
+                href="/#precos"
                 className="block text-white py-3 border-b border-white/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Preços
               </Link>
+
               <Link
-                href="#quem-somos"
+                href="/pages/QuemSomos"
                 className="block text-white py-3 border-b border-white/20"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Quem Somos
+                Empresa
               </Link>
             </div>
           </div>

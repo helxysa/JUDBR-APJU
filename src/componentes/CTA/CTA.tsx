@@ -63,10 +63,10 @@ export default function CTA() {
           O nosso Time de Especialistas, alinhados à Tecnologia, trabalha duro para apoiá-lo no exercício da Advocacia. A percepção de que a advocacia estava ficando defasada em relação à inovação e tecnologia, nos inspirou a desenvolver diversas soluções para apoiar você na gestão de seu escritório. 
         </p>
         <div className="flex space-x-4 justify-center md:justify-start mb-8 md:mb-12">
+        <SocialIcon icon="facebook" />
+      
           <SocialIcon icon="instagram" />
-          <SocialIcon icon="facebook" />
           <SocialIcon icon="linkedin" />
-          <SocialIcon icon="twitter" />
         </div>
       </div>
 

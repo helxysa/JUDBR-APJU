@@ -83,7 +83,7 @@ export default function HeroSection() {
           
           <div className="w-full lg:w-5/12 relative mt-12 lg:mt-0">
           <video 
-                  src="/video/pratice-panther.mp4" 
+                  src="/video/jubr-gif.mp4" 
                   autoPlay 
                   loop 
                   muted 

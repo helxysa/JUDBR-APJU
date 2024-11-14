@@ -16,10 +16,7 @@ export default function HomePage() {
             <LaunchJubr />
             <Steps />
         <Prices />
-            <Section />
-            <QuemSomos />
             <Testimonials />
-            <LegalPraticeStats />
             <CTA />
             <FrequentlyAsked />
         

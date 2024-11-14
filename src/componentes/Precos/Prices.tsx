@@ -308,9 +308,9 @@ function PricingComparison() {
                   }`}
                 >
                   {plan.name === 'BANCA' && (
-                    <div className="absolute -top-px left-0 right-0">
-                      <span className="bg-emerald-600 text-white text-xs font-medium px-4 py-1.5 rounded-full">
-                        MAIS POPULAR
+                    <div className="absolute  left-1/4">
+                      <span className="bg-emerald-500 text-white text-[10px] font-xl px-10 py-1 rounded-r-full rounded-l-full">
+                        POPULAR
                       </span>
                     </div>
                   )}
@@ -373,9 +373,9 @@ function PricingComparison() {
             }`}
           >
             {plan.name === 'BANCA' && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-emerald-600 text-white text-xs font-medium px-4 py-1.5 rounded-full">
-                  MAIS POPULAR
+              <div className="absolute -top-3 right-4">
+                <span className="bg-emerald-500 text-white text-[10px] font-medium px-4 py-1 rounded-r-full rounded-l-full">
+                  POPULAR
                 </span>
               </div>
             )}

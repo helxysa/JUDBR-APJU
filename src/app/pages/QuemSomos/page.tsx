@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import {Animation} from '../../../componentes/useIntersectionAnimation/Animation';
+import FrequentlyAsked from '@/componentes/FrequentlyAsked/FrequentlyAsked';
 
 export default function QuemSomos() {
 
@@ -16,7 +17,7 @@ export default function QuemSomos() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="text-center max-w-6xl mx-auto">
           <main  className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div  className="text-center max-w-4xl mx-auto animate-fade-in mb-12 md:mb-20">
+            <div  className="text-center max-w-4xl mx-auto animate-fade-in mb-12 md:mb-20 mt-10 md:mt-0">
               
             <span className="text-judbr-main text-xs md:text-sm font-semibold border-2 border-judbr-main/20 rounded-full px-3 py-1 md:px-4 md:py-2 mb-2 sm:mb-4 bg-white shadow-sm hover:shadow-md transition-all duration-300">
             Quem somos
@@ -40,6 +41,8 @@ export default function QuemSomos() {
           </main>
           </div>
         </div>
+        <FrequentlyAsked />
+
       </div>
   );
 }
